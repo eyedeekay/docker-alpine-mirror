@@ -17,5 +17,5 @@ RUN mkdir -p /home/apkmirror/www/htdocs/alpine
 RUN chown -Rv apkmirror:apkmirror /home/apkmirror/
 RUN chmod -Rv u+rwx /home/apkmirror/
 VOLUME /home/apkmirror/www/htdocs/
-USER apkmirror
+#USER apkmirror
 CMD /usr/bin/init
