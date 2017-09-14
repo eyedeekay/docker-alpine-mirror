@@ -31,5 +31,6 @@ mkdir -p "$dest"
         --timeout=600 \
         --verbose \
         --port=8873 \
+        --fake-super \
         $exclude \
         "$src" "$dest"
