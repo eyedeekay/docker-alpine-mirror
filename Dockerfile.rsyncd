@@ -7,7 +7,7 @@ RUN echo "[alpine]" >> /etc/rsyncd.conf
 RUN echo "      path = /var/www/localhost/htdocs/alpine" >> /etc/rsyncd.conf
 RUN echo "      comment = My Alpine Linux Mirror" >> /etc/rsyncd.conf
 RUN rsync --help
-EXPOSE 873/tcp
+EXPOSE 8873/tcp
 CMD /usr/bin/rsync --daemon \
         --config /etc/rsyncd.conf \
         --port 8873 \
