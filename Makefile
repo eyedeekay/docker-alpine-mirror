@@ -36,6 +36,19 @@ docker-run-rsyncd:
 		-p 873:8873 \
 		-t alpine-mirror-rsyncd
 
+docker-run-child:
+	docker run --name alpine-mirror-child \
+		--restart always \
+		--cap-drop=all \
+		--cap-add=setuid \
+		--cap-add=setgid \
+		--cap-add=chown \
+		--cap-add=dac_override \
+		--cap-add=fowner \
+		-p 3143:3143 \
+		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
+		-t alpine-mirror-child
+
 docker-update:
 	git pull; \
 	docker rm -f alpine-mirror; \
