@@ -9,8 +9,8 @@ docker-build:
 
 docker-build-support:
 	docker build --force-rm -f Dockerfile.rsyncd -t alpine-mirror-rsyncd .
-	docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
-	docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
+	#docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
+	#docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
 
 docker-run:
 	docker run --name alpine-mirror \
@@ -24,6 +24,12 @@ docker-run:
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
+
+docker-run-rsyncd:
+	docker run --name alpine-mirror-rsyncd \
+		--restart always \
+		--volumes-from alpine-mirror \
+		-t alpine-mirror-rsyncd
 
 docker-update:
 	git pull; \
