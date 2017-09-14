@@ -45,6 +45,7 @@ docker-run-child:
 		--cap-add=chown \
 		--cap-add=dac_override \
 		--cap-add=fowner \
+		--cap-add=chroot \
 		-p 3144:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror-child
