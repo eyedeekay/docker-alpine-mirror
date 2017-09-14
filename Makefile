@@ -9,10 +9,14 @@ docker-build:
 docker-run:
 	docker run -d \
 		--name alpine-mirror \
+		--cap-drop=all \
+		--cap-add=setuid \
+		--cap-add=getuid \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
-#--cap-drop=all \
+
+#--cap-add=mknod \
 
 docker-update:
 	git pull; \
