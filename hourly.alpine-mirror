@@ -11,7 +11,10 @@ dest=/home/apkmirror/www/htdocs/alpine
 
 # uncomment this to exclude old v2.x branches
 exclude="--exclude
-'v2.*'
+'v2.4'
+'v2.5'
+'v2.6'
+'v2.7'
 'v3.0'
 'v3.1'
 'v3.2'
