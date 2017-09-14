@@ -57,22 +57,19 @@ docker-update:
 	git pull; \
 	docker rm -f alpine-mirror; \
 	make docker-build; \
-	make docker-run; \
-	docker logs -f alpine-mirror
+	make docker-run
 
 docker-update-rsync:
 	git pull; \
 	docker rm -f alpine-mirror-rsyncd; \
 	make docker-build-support; \
-	make docker-run-rsyncd; \
-	docker logs -f alpine-mirror-rsyncd
+	make docker-run-rsyncd
 
 docker-update-child:
 	git pull; \
 	docker rm -f alpine-mirror-child; \
 	make docker-build-child; \
-	make docker-run-child; \
-	docker logs -f alpine-mirror-child
+	make docker-run-child
 
 
 docker-stop:
