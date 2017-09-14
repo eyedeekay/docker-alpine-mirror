@@ -12,6 +12,9 @@ docker-build-support:
 	#docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
 	#docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
 
+docker-build-child:
+	docker build --force-rm -f Dockerfile.child -t alpine-mirror-child .
+
 docker-run:
 	docker run --name alpine-mirror \
 		--restart always \
