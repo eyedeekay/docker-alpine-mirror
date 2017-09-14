@@ -1,7 +1,8 @@
 
-export WORK_DIR = $(shell pwd)
+export WORK_DIR = $(shell pwd)/
 
 dummy:
+	@echo $(WORK_DIR)
 
 docker-build:
 	docker build --force-rm -t alpine-mirror .
@@ -20,17 +21,9 @@ docker-run:
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
 
-#--cap-add=mknod \
-#
-#
-#--cap-add=dac_read_search \
-#
-
 docker-update:
 	git pull; \
 	docker rm -f alpine-mirror; \
-	docker rmi -f alpine-mirror; \
-	docker system prune -f; \
 	make docker-build; \
 	make docker-run; \
 	docker logs -f alpine-mirror
