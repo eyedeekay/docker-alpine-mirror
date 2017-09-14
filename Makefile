@@ -30,7 +30,7 @@ docker-run-rsyncd:
 		--restart always \
 		--cap-drop=all \
 		--volumes-from alpine-mirror \
-		-p 873:873 \
+		-p 873:8873 \
 		-t alpine-mirror-rsyncd
 
 docker-update:
