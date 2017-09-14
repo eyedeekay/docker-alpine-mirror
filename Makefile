@@ -8,7 +8,9 @@ docker-build:
 
 docker-run:
 	docker run -d \
+		--drop-cap=all \
 		--name alpine-mirror \
+		--user apkmirror \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
