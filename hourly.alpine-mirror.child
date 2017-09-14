@@ -6,7 +6,7 @@ if [ -z "$flock" ] ; then
   exec env flock=1 flock -n $lockfile "$0" "$@"
 fi
 
-src=rsync://172.17.0.5/alpine/
+src=rsync://127.0.0.1/alpine/
 dest=/home/apkmirror/www/htdocs/alpine
 
 # uncomment this to exclude old v2.x branches
@@ -30,6 +30,5 @@ mkdir -p "$dest"
         --delay-updates \
         --timeout=600 \
         --verbose \
-        --port 8873 \
         $exclude \
         "$src" "$dest"
