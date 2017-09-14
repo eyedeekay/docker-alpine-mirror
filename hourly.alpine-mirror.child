@@ -30,5 +30,6 @@ mkdir -p "$dest"
         --delay-updates \
         --timeout=600 \
         --verbose \
+        --port 8873 \
         $exclude \
         "$src" "$dest"
