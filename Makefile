@@ -27,3 +27,13 @@ docker-update:
 	make docker-build; \
 	make docker-run; \
 	docker logs -f alpine-mirror
+
+docker-stop:
+	docker stop alpine-mirror
+
+
+docker-logs:
+	docker logs -f alpine-mirror
+
+browse-repo:
+	x-www-browser http://127.0.0.1:3143/
