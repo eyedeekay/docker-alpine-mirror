@@ -6,12 +6,12 @@ dummy:
 
 docker-build:
 	docker build --force-rm -t alpine-mirror .
-	docker build --force-rm -f Dockerfile.alpine-mirror
-	docker build --force-rm -f Dockerfile.rsyncd -t alpine-mirror-rsyncd
+	docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
+	docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
+	docker build --force-rm -f Dockerfile.rsyncd -t alpine-mirror-rsyncd .
 
 docker-run:
-	docker run -d \
-		--name alpine-mirror \
+	docker run --name alpine-mirror \
 		--restart always \
 		--cap-drop=all \
 		--cap-add=setuid \
@@ -32,7 +32,6 @@ docker-update:
 
 docker-stop:
 	docker stop alpine-mirror
-
 
 docker-logs:
 	docker logs -f alpine-mirror
