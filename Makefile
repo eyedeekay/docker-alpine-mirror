@@ -8,11 +8,11 @@ docker-build:
 
 docker-run:
 	docker run -d \
-		--cap-drop=all \
 		--name alpine-mirror \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
+#--cap-drop=all \
 
 docker-update:
 	git pull; \
