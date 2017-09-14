@@ -4,7 +4,7 @@ RUN apk add darkhttpd rsync
 ADD hourly.alpine-mirror /etc/periodic/hourly/alpine-mirror
 RUN chmod +x /etc/periodic/hourly/alpine-mirror
 RUN echo "#! /bin/sh" > /usr/bin/init
-RUN echo "darkhttpd /home/apkmirror/www/htdocs/alpine --port 3143 1>log 2>err &" >> /usr/bin/init
+RUN echo "darkhttpd /home/apkmirror/www/htdocs/ --port 3143 1>log 2>err &" >> /usr/bin/init
 RUN echo "while true; do" >> /usr/bin/init
 RUN echo "    /etc/periodic/hourly/alpine-mirror" >> /usr/bin/init
 RUN echo "    tail -f log err" >> /usr/bin/init
