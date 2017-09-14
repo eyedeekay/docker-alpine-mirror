@@ -12,8 +12,9 @@ RUN echo "    sleep 1h" >> /usr/bin/init
 RUN echo "done" >> /usr/bin/init
 RUN chmod +x /usr/bin/init
 RUN adduser -h /home/apkmirror -D apkmirror
-USER apkmirror
 WORKDIR /home/apkmirror/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
+RUN chown -R apkmirror:apkmirror /home/apkmirror/www/htdocs/
 VOLUME /home/apkmirror/www/htdocs/
+USER apkmirror
 CMD /usr/bin/init
