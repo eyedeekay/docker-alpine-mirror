@@ -7,4 +7,10 @@ RUN echo "[alpine]" >> /etc/rsyncd.conf
 RUN echo "      path = /var/www/localhost/htdocs/alpine" >> /etc/rsyncd.conf
 RUN echo "      comment = My Alpine Linux Mirror" >> /etc/rsyncd.conf
 RUN rsync --help
-CMD /usr/bin/rsync --daemon --config /etc/rsyncd.conf --verbose --log-file=./log && tail -f ./log
+EXPOSE 873/tcp
+CMD /usr/bin/rsync --daemon \
+        --config /etc/rsyncd.conf \
+        --port 8873 \
+        --verbose \
+        --log-file=./log && \
+        tail -f ./log

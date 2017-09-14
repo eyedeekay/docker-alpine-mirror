@@ -17,4 +17,5 @@ VOLUME /home/apkmirror/www/htdocs/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
 RUN chown -Rv root:root /home/apkmirror/www
 RUN chmod -Rv u+rwx /home/apkmirror/
+EXPOSE 3143/tcp
 CMD /usr/bin/init
