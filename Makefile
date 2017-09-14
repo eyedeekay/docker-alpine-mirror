@@ -9,9 +9,11 @@ docker-build:
 docker-run:
 	docker run -d \
 		--name alpine-mirror \
+		--restart always \
 		--cap-drop=all \
 		--cap-add=setuid \
 		--cap-add=setgid \
+		--cap-add=dac_override \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
@@ -20,7 +22,7 @@ docker-run:
 #--cap-add=fowner \
 #--cap-add=chown \
 #--cap-add=dac_read_search \
-#--cap-add=dac_override \
+#
 
 docker-update:
 	git pull; \
