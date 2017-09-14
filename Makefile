@@ -12,6 +12,7 @@ docker-run:
 		--cap-drop=all \
 		--cap-add=setuid \
 		--cap-add=setgid \
+		--cap-add=fowner \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
