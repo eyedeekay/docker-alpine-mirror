@@ -13,6 +13,7 @@ docker-run:
 		--cap-drop=all \
 		--cap-add=setuid \
 		--cap-add=setgid \
+		--cap-add=chown \
 		--cap-add=dac_override \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
@@ -20,7 +21,7 @@ docker-run:
 
 #--cap-add=mknod \
 #--cap-add=fowner \
-#--cap-add=chown \
+#
 #--cap-add=dac_read_search \
 #
 

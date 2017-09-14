@@ -17,6 +17,4 @@ VOLUME /home/apkmirror/www/htdocs/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
 RUN chown -Rv root:root /home/apkmirror/www
 RUN chmod -Rv u+rwx /home/apkmirror/
-#USER apkmirror
-RUN darkhttpd --help
 CMD /usr/bin/init
