@@ -29,5 +29,6 @@ mkdir -p "$dest"
         --delete-after \
         --delay-updates \
         --timeout=600 \
+        --verbose \
         $exclude \
         "$src" "$dest"
