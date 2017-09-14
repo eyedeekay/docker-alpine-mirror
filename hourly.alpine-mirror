@@ -30,5 +30,6 @@ mkdir -p "$dest"
         --delay-updates \
         --timeout=600 \
         --verbose \
+        --fake-super \
         $exclude \
         "$src" "$dest"

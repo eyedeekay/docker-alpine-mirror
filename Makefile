@@ -51,6 +51,8 @@ docker-run-child:
 		-v $(WORK_DIR)apkmirror-child:/home/apkmirror/www/htdocs \
 		-t alpine-mirror-child
 
+docker-update-all: docker-update docker-update-rsync docker-update-child
+
 docker-update:
 	git pull; \
 	docker rm -f alpine-mirror; \
