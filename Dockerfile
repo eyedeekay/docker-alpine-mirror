@@ -13,9 +13,9 @@ RUN echo "done" >> /usr/bin/init
 RUN chmod +x /usr/bin/init
 RUN adduser -h /home/apkmirror -D apkmirror
 WORKDIR /home/apkmirror/
+VOLUME /home/apkmirror/www/htdocs/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
 RUN chown -Rv apkmirror:apkmirror /home/apkmirror/
 RUN chmod -Rv u+rwx /home/apkmirror/
-VOLUME /home/apkmirror/www/htdocs/
 #USER apkmirror
 CMD /usr/bin/init
