@@ -56,6 +56,14 @@ docker-update:
 	make docker-run; \
 	docker logs -f alpine-mirror
 
+docker-update-rsync:
+	git pull; \
+	docker rm -f alpine-mirror-child; \
+	docker rm -f alpine-mirror-rsyncd; \
+	make docker-build-support; \
+	make docker-run-rsyncd; \
+	make docker-run-child
+
 docker-stop:
 	docker stop alpine-mirror
 
