@@ -48,7 +48,7 @@ docker-run-child:
 		--cap-add=sys_chroot \
 		--privileged=true \
 		-p 3144:3143 \
-		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs \
+		-v $(WORK_DIR)apkmirror-child:/home/apkmirror/www/htdocs \
 		-t alpine-mirror-child
 
 docker-update:
