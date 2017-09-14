@@ -10,7 +10,14 @@ src=rsync://rsync.alpinelinux.org/alpine/
 dest=/home/apkmirror/www/htdocs/alpine
 
 # uncomment this to exclude old v2.x branches
-exclude="--exclude 'v2.*' 'v3.0' 'v3.1' 'v3.2' 'v3.3' 'v3.4'"
+exclude="--exclude
+'v2.*'
+'v3.0'
+'v3.1'
+'v3.2'
+'v3.3'
+'v3.4'
+"
 
 mkdir -p "$dest"
 /usr/bin/rsync \
