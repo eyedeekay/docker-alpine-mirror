@@ -6,6 +6,8 @@ dummy:
 
 docker-build:
 	docker build --force-rm -t alpine-mirror .
+	docker build --force-rm -f Dockerfile.alpine-mirror
+	docker build --force-rm -f Dockerfile.rsyncd -t alpine-mirror-rsyncd
 
 docker-run:
 	docker run -d \
