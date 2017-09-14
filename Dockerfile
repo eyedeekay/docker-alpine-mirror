@@ -14,8 +14,8 @@ RUN chmod +x /usr/bin/init
 RUN adduser -h /home/apkmirror -D apkmirror
 WORKDIR /home/apkmirror/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
-RUN chown -R apkmirror:apkmirror /home/apkmirror/www/htdocs/
-RUN chmod -R +w /home/apkmirror/www/htdocs/
+RUN chown -Rv apkmirror:apkmirror /home/apkmirror/
+RUN chmod -Rv u+rwx /home/apkmirror/
 VOLUME /home/apkmirror/www/htdocs/
 USER apkmirror
 CMD /usr/bin/init
