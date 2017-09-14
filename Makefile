@@ -25,7 +25,7 @@ docker-run:
 		--cap-add=dac_override \
 		--cap-add=fowner \
 		-p 3143:3143 \
-		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
+		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs \
 		-t alpine-mirror
 
 docker-run-rsyncd:
@@ -47,7 +47,7 @@ docker-run-child:
 		--cap-add=fowner \
 		--cap-add=sys_chroot \
 		-p 3144:3143 \
-		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
+		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs \
 		-t alpine-mirror-child
 
 docker-update:
