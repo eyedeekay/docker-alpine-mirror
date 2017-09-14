@@ -15,7 +15,7 @@ RUN adduser -h /home/apkmirror -D apkmirror
 WORKDIR /home/apkmirror/
 VOLUME /home/apkmirror/www/htdocs/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
-RUN chown -Rv apkmirror:apkmirror /home/apkmirror/
+RUN chown -Rv root:root /home/apkmirror/www
 RUN chmod -Rv u+rwx /home/apkmirror/
 #USER apkmirror
 RUN darkhttpd --help
