@@ -9,8 +9,8 @@ docker-build:
 
 docker-build-support:
 	docker build --force-rm -f Dockerfile.rsyncd -t alpine-mirror-rsyncd .
-	#docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
-	#docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
+	docker build --force-rm -f Dockerfile.alpine-mirror -t alpine-local .
+	docker build --force-rm -f Dockerfile.alpine-mirror-v3.5 -t alpine-local-35 .
 
 docker-build-child:
 	docker build --force-rm -f Dockerfile.child -t alpine-mirror-child .
