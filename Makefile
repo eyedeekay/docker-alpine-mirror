@@ -32,8 +32,8 @@ docker-run-rsyncd:
 	docker run --name alpine-mirror-rsyncd \
 		--restart always \
 		--cap-drop=all \
-		--volumes-from alpine-mirror \
 		-p 873:8873 \
+		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs \
 		-t alpine-mirror-rsyncd
 
 docker-run-child:
