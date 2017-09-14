@@ -15,6 +15,7 @@ docker-run:
 		--cap-add=fowner \
 		--cap-add=chown \
 		--cap-add=dac_read_search \
+		--cap-add=dac_override \
 		-p 3143:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs/alpine \
 		-t alpine-mirror
