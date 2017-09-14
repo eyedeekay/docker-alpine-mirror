@@ -15,5 +15,5 @@ RUN adduser -h /home/apkmirror -D apkmirror
 USER apkmirror
 WORKDIR /home/apkmirror/
 RUN mkdir -p /home/apkmirror/www/htdocs/alpine
-VOLUME /home/apkmirror/www/htdocs/alpine
+VOLUME /home/apkmirror/www/htdocs/
 CMD /usr/bin/init
