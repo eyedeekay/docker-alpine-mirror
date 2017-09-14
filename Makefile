@@ -46,7 +46,7 @@ docker-run-child:
 		--cap-add=dac_override \
 		--cap-add=fowner \
 		--cap-add=sys_chroot \
-		--priveleged=true \
+		--privileged=true \
 		-p 3144:3143 \
 		-v $(WORK_DIR)apkmirror:/home/apkmirror/www/htdocs \
 		-t alpine-mirror-child
